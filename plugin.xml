@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="org.moguwai.test1"
+      version="0.1.0">
+    <name>test1</name>
+    <description>Sample PhoneGap test1 Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,test1</keywords>
+ 
+ 
+    <js-module src="www/test1.js" name="test1">
+        <clobbers target="window.test1" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="test1">
+                <param name="android-package" value="customPlugin.cordova.test1.test1"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/test1.java" target-dir="src/customPlugin/cordova/test1" />      
+     </platform>          
+</plugin>
